@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body{
+        }
+        #home_carousel{
+
+        }
+        .noise{
+            background: url("src/images/noise.png"),lightgray 0% 0% / 100px 100px repeat;
+            opacity: 0.3;
+            mix-blend-mode: overlay;
+        }
+        .circle{
+            position: relative;
+            -moz-transition: opacity 1s;
+            -webkit-transition: opacity 1s;
+            -ms-transition: opacity 1s;
+            -o-transition: opacity 1s;
+            transition: opacity 1s;
+
+        }
+        #svg2{
+            position: absolute;
+            left:20px;
+            top:510px;
+        }
+        .bg-img{
+            position: absolute;
+            left:20px;
+            top:510px;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<html>
+<body>
+<div id="home_carousel_container">
+    <svg id="svg1" xmlns="http://www.w3.org/2000/svg" style="width: 5in; height: 5in">
+        <circle id="circle_purple" class="circle" r="230" cx="234" cy="234" opacity="0" style="fill:rgba(201, 149, 190, 0.43);;  stroke-width: 2" filter='url(#noiseFilter)'/>
+        <circle id="circle_green" class="circle" r="230" cx="234" cy="234" style="fill:rgba(0, 125, 98, 0.43);  stroke-width: 2" filter='url(#noiseFilter)'/>
+        <circle id="circle_blue" class="circle" r="230" cx="234" cy="234" style="fill:rgba(0, 125, 98, 0.43);  stroke-width: 2" filter='url(#noiseFilter)'/>
+        <circle id="circle_yellow" class="circle" r="230" cx="234" cy="234" opacity="0" style="fill:#f7b80a6e;  stroke-width: 2" filter='url(#noiseFilter)'/>
+        <filter id='noiseFilter'>
+            <feTurbulence baseFrequency="0.8" numOctaves="20" xresult="colorNoise" />
+            <feColorMatrix in="colorNoise" type="matrix" values=".33 .33 .33 0 0 .33 .33 .33 0 0 .33 .33 .33 0 0 0 0 0 0.7 0"/>
+            <feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
+            <feBlend in="SourceGraphic" in2="monoNoise" mode="multiply" />
+        </filter>
+    </svg>
+    <svg id="svg2" xmlns="http://www.w3.org/2000/svg" style="width: 5in; height: 5in">
+        <circle id="circle_noise" class="circle" r="230" cx="234" cy="234"  style="fill:red;  stroke-width: 2" filter='url(#noiseFilter)'/>
+    </svg>
+    <div class="bg-img noise"></div>
+    <!--canvas class="noise" id="home_carousel"></canvas-->
+</div>
+<script type="text/javascript">
+    let svg = document.getElementById("svg1");
+    let circle_green = document.getElementById("circle_green");
+    let circle_purple = document.getElementById("circle_purple");
+    let circle_blue = document.getElementById("circle_blue");
+    let circle_yellow = document.getElementById("circle_yellow");
+    let current = circle_green;
+    function changeColor(i){
+        console.log(i);
+        if(current !== i){
+            current.style.opacity = '0';
+            i.style.opacity = '100';
+            current = i;
+        }
+    }
+</script>
+</body>
+</html>
