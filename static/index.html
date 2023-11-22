@@ -8,6 +8,23 @@
 </head>
 <html>
 <body class="">
+<div id="home_carousel_container" style="display: none">
+    <div id="back-circles">
+        <span id="circle_green" class="circle bg-light-green"></span>
+        <span id="circle_blue" class="circle bg-light-blue" style="opacity:0"></span>
+        <span id="circle_purple" class="circle bg-light-purple" style="opacity:0"></span>
+        <span id="circle_yellow" class="circle bg-light-yellow" style="opacity:0"></span>
+        <span class="circle noise"></span>
+    </div>
+    <div id="carousel_illustration_container_next" class="carousel_illustration_container">
+        <img class="carousel-illustration" src="src/images/green.png">
+        <span class="noise"></span>
+    </div>
+    <div id="carousel_illustration_container_prev" class="carousel_illustration_container">
+        <img class="carousel-illustration" src="src/images/blue.png">
+        <span class="noise"></span>
+    </div>
+</div>
 <div class="container-sm p-0 h-100">
     <div class="d-flex justify-content-center w-100 h-100">
         <div class="home-text-container h-65 w-75">
@@ -30,26 +47,7 @@
     </div>
 </div>
 
-<div id="home_carousel_container">
-    <svg id="svg1" xmlns="http://www.w3.org/2000/svg" style="">
-        <circle id="circle_purple" class="circle" r="560" cx="560" cy="560" opacity="0" style="fill:#ff7d62; opacity: 0.3; stroke-width: 2" filter='url(#noiseFilter)'/>
-        <circle id="circle_green" class="circle" r="560" cx="560" cy="560" style="fill:#007d62; opacity: 0.35;   stroke-width: 2" filter='url(#noiseFilter)'/>
-        <circle id="circle_blue" class="circle" r="560" cx="560" cy="560" style="fill:rgba(0, 125, 98, 0.43);  stroke-width: 2" filter='url(#noiseFilter)'/>
-        <circle id="circle_yellow" class="circle" r="560" cx="560" cy="560" opacity="0" style="fill:#f7b80a6e;  stroke-width: 2" filter='url(#noiseFilter)'/>
-        <filter id='noiseFilter'>
-            <feTurbulence baseFrequency="0.7" numOctaves="20" xresult="colorNoise" />
-            <!--<feColorMatrix in="colorNoise" type="matrix" values=".33 .33 .33 0 0 .33 .33 .33 0 0 .33 .33 .33 0 0 0 0 0 1.5 0"/>-->
-            <feColorMatrix in="colorNoise" type="matrix" values="
-            0 0 0 0 0
-            0 0 0 0 0
-            0 0 0 0 0
-            0 0 0 1 0
-"/>
-            <feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
-            <feBlend in="SourceGraphic" in2="monoNoise" mode="multiply" />
-        </filter>
-    </svg>
-</div>
+
 <script type="module" src="js/main.js"></script>
 </body>
 </html>
