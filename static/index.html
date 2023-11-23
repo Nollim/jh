@@ -16,13 +16,18 @@
         <span id="circle_yellow" class="circle bg-light-yellow" style="opacity:0"></span>
         <span class="circle noise"></span>
     </div>
-    <div id="carousel_illustration_container_next" class="carousel_illustration_container">
+    <div data-position="current" class="carousel_illustration_container">
         <img class="carousel-illustration" src="src/images/green.png">
         <span class="noise"></span>
     </div>
-    <div id="carousel_illustration_container_prev" class="carousel_illustration_container">
-        <img class="carousel-illustration" src="src/images/blue.png">
+    <div data-position="next" class="carousel_illustration_container">
         <span class="noise"></span>
+    </div>
+    <div id="pictures_container" style="display: none">
+        <img class="carousel-illustration" data-picture="green" src="src/images/green.png">
+        <img class="carousel-illustration" data-picture="blue" src="src/images/blue.png">
+        <img class="carousel-illustration" data-picture="purple" src="src/images/purple.png">
+        <img class="carousel-illustration" data-picture="yellow" src="src/images/yellow.png">
     </div>
 </div>
 <div class="container-sm p-0 h-100">
@@ -31,16 +36,16 @@
             Salut
             <ul id="carousel_links_container">
                 <li>
-                    <a data-activate="circle_green">Green</a>
+                    <a data-activate="green">Green</a>
                 </li>
                 <li>
-                    <a data-activate="circle_purple">Purple</a>
+                    <a data-activate="purple">Purple</a>
                 </li>
                 <li>
-                    <a data-activate="circle_blue">Blue</a>
+                    <a data-activate="blue">Blue</a>
                 </li>
                 <li>
-                    <a data-activate="circle_yellow">Yellow</a>
+                    <a data-activate="yellow">Yellow</a>
                 </li>
             </ul>
         </div>
