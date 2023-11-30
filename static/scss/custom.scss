@@ -6,9 +6,22 @@ $base-light-blue: rgba($base-blue, 0.43);
 $base-light-green: rgba($base-green, 0.43);
 $base-light-yellow: rgba($base-yellow, 0.43);
 $base-light-purple: rgba($base-purple, 0.43);
+$base-color: rgba(46, 79, 87, 1);
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../src/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
 html,body {
   height: 100%;
   min-height: 100% !important;
+  --bs-body-color: $base-color;
+  --bs-btn-active-color:$base-color;
+  --bs-btn-active-bg:#fff;
+  --bs-body-font-family:"Poppins", Verdana, Tahoma;
+  --bs-btn-font-size:1.2rem;
+
 }
 body {
   min-height: 100%;
@@ -17,6 +30,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.pb-6{
+  padding-bottom: 6rem !important;
+}
+
 .circle{
   position: absolute;
   -moz-transition: opacity 1s;
@@ -71,6 +89,7 @@ height:65% !important;
   position: absolute;
   height:100%;
   width:100%;
+  z-index:-10000;
 }
 #home_carousel_container #back-circles{
   position: absolute;
@@ -78,11 +97,16 @@ height:65% !important;
   width:100%;
 }
 .home-text-container{
-  position: absolute;
+  //position: absolute;
   bottom: 10%;
   border: 1px solid #2e4f57;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+}
+.home-text{
+  border: 1px solid #2e4f57;
+  border-radius: 15px;
+
 }
 .carousel_illustration_container{
   position: absolute;
@@ -96,4 +120,57 @@ height:65% !important;
   position:relative;
   height: 100%;
   width: 100%;
+}
+
+.btn, .btn:focus-visible, .btn:active {
+  color:$base-color;
+  background-color:#fff;
+  --bs-border-radius:0.575rem;
+}
+
+.btn .icon {
+  font-size: 48px;
+  border: 1px solid $base-color;
+  border-radius: 1em;
+  width: 1em;
+  height: 1em;
+  display: block;
+  position: relative;
+  float: left;
+  transition-behavior: normal, normal, normal, normal;
+  transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+  transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  transition-delay: 0s, 0s, 0s, 0s;
+  transition-property: color, background-color, border-color, box-shadow;
+  color: #fff;
+  background-color: $base-color;
+}
+.btn {
+  --bs-btn-font-size: 1.2rem;
+  --bs-border-radius:1rem;
+  border:1px solid $base-color;
+  &:hover {
+    border:1px solid $base-color;
+    color: $base-color;
+    background-color: #fff;
+    .icon {
+      color: $base-color;
+      background-color: #fff;
+    }
+  }
+}
+.btn-txt {
+  float: left;
+  display: inline-block;
+  text-align: center;
+  line-height: 2.6em;
+  margin-right: 10px;
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  position: absolute;
+  top:-1px;
+  left: -1px;
+  margin: 0;
+  width: 1em;
+  height: 1em;
 }

@@ -88,3 +88,6 @@ export function HomeCarousel() {
 }
 
 
+window.addEventListener('DOMContentLoaded', () => {
+    new HomeCarousel();
+});
