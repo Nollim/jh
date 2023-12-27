@@ -1,3 +1,5 @@
+@import "_styles.scss";
+
 $base-blue: #007D62;
 $base-green: #5C5F03;
 $base-yellow: #F7B80A;
@@ -103,11 +105,17 @@ height:65% !important;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.home-text{
-  border: 1px solid #2e4f57;
-  border-radius: 15px;
 
+.home-text{
+  border-radius: 15px;
 }
+@include media-breakpoint-up(lg) {
+  .home-text{
+    border: 1px solid #2e4f57;
+  }
+}
+
+
 .carousel_illustration_container{
   position: absolute;
   top:0;
@@ -120,6 +128,17 @@ height:65% !important;
   position:relative;
   height: 100%;
   width: 100%;
+}
+#carousel_links_container{
+  li{
+    a{
+      color:#f00;
+      cursor: pointer;
+      display: block;
+      height: 7rem;
+      position:relative;
+    }
+  }
 }
 
 .btn, .btn:focus-visible, .btn:active {

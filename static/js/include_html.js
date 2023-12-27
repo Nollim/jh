@@ -27,5 +27,10 @@ function includeHTML() {
             return;
         }
     }
+    window.dispatchEvent(
+        new CustomEvent("allHtmlIncluded", {
+            bubbles: true,
+        }),
+    );
 }
 includeHTML();
