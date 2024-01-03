@@ -25,13 +25,7 @@ html,body {
   --bs-btn-font-size:1.2rem;
 
 }
-body {
-  min-height: 100%;
-  position:relative;
-  overflow:hidden;
-  margin: 0;
-  padding: 0;
-}
+
 
 .pb-6{
   padding-bottom: 6rem !important;
@@ -109,11 +103,7 @@ height:65% !important;
 .home-text{
   border-radius: 15px;
 }
-@include media-breakpoint-up(lg) {
-  .home-text{
-    border: 1px solid #2e4f57;
-  }
-}
+
 
 
 .carousel_illustration_container{
@@ -192,4 +182,19 @@ height:65% !important;
   margin: 0;
   width: 1em;
   height: 1em;
+}
+
+@include media-breakpoint-up(lg) {
+  .home-text{
+    border: 1px solid #2e4f57;
+  }
+  #main {
+    height: 100% !important;
+  }
+  #home-container{
+    height: 75% !important;
+  }
+  .home-text-container{
+    overflow: hidden;
+  }
 }
